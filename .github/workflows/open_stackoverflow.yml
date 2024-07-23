@@ -1,0 +1,18 @@
+name: OpenStackOverflow
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Run daily at 9 AM UTC
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+      - name: Run Java Program
+        run: |
+          javac OpenStackOverflow.java
+          java OpenStackOverflow
