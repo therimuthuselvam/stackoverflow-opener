@@ -1,7 +1,8 @@
 name: OpenStackOverflow
 on:
   schedule:
-    - cron: '0 9 * * *'  # Run daily at 9 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
